@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>MBTI性格测试</title>
+</head>
+<body>
+
+<h1>MBTI性格测试</h1>
+
+<form id="mbtiForm">
+  <p>1. 你会花很多时间探索自己感兴趣的事情吗？</p>
+  <input type="radio" name="q1" value="I">A. 会<br>
+  <input type="radio" name="q1" value="E">B. 不会<br><br>
+  
+  <p>2. 在经过一周忙碌的学习后，你最期待：</p>
+  <input type="radio" name="q2" value="I">A. 窝在宿舍享受独自休息的时间<br>
+  <input type="radio" name="q2" value="E">B. 外出聚餐享受与朋友待在一起的时间<br><br>
+  
+  <p>3. 你是否经常完整的做完一项工作后再做下一个</p>
+  <input type="radio" name="q3" value="A">是<br>
+  <input type="radio" name="q3" value="B">否<br><br>
+  
+  <p>4. 你是否一旦学会一项技能容易产生厌烦的情绪？</p>
+  <input type="radio" name="q4" value="N">是<br>
+  <input type="radio" name="q4" value="S">否<br><br>
+  
+  <p>5. 在面对选择的时候，你会很容易被情绪控制吗？</p>
+  <input type="radio" name="q5" value="F">是<br>
+  <input type="radio" name="q5" value="T">否<br><br>
+  
+  <p>6. 你觉得自己大多数时候是感性的还是理性的？</p>
+  <input type="radio" name="q6" value="F">感性<br>
+  <input type="radio" name="q6" value="T">理性<br><br>
+  
+  <p>7. 每天的学习计划是按自己的计划还是心情进行</p>
+  <input type="radio" name="q7" value="J">计划<br>
+  <input type="radio" name="q7" value="P">心情<br><br>
+  
+  <p>8. 你会按照每一步完成学习任务吗</p>
+  <input type="radio" name="q8" value="J">会<br>
+  <input type="radio" name="q8" value="P">不会<br><br>
+  
+  <button type="button" onclick="calculateMBTI()">提交</button>
+</form>
+
+<script>
+function calculateMBTI() {
+  var result = "";
+  var answers = document.querySelectorAll('input[type="radio"]:checked');
+  
+  for (var i = 0; i < answers.length; i += 2) {
+    result += answers[i + 1].value;
+  }
+  
+  alert("你的MBTI性格类型是：" + result);
+}
+</script>
+
+</body>
+</html>
